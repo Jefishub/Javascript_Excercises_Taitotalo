@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 21</title>
+</head>
+<body>
+    <form onsubmit="tuloste(event)">
+        <input type="submit" value="Paina tästä!"><br>
+    </form>
+    <p id="tuloste"></p>
+    <script>
+        let tulosteElem = document.getElementById('tuloste');
+        let taulukko = [2,3,5,1,8]
+        function tuloste(e) {
+            e.preventDefault();
+            let tulos = [];
+            taulukko.forEach(numero => tulos.push(numero*3))
+            tulosteElem.innerHTML = tulos;
+        }
+    </script>
+</body>
+</html>

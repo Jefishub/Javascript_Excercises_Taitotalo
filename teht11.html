@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 11</title>
+</head>
+<body>
+    <form onsubmit="tulosta(event)">
+        <input id="name" type="text" placeholder="Kirjoita lempieläimesi">
+        <input type="submit" value="Paina minua!">
+    </form>
+    <p id="tuloste"></p>
+</body>
+<script>
+    function tulosta(e) {
+        e.preventDefault();    
+        let tulosteElem = document.getElementById('tuloste');
+        let elain = document.getElementById("name").value.toLowerCase();
+        let teksti = "";
+
+        if (elain == "koira")
+            tulosteElem.innerHTML = "vuhvuh";
+        else if (elain == "kissa")
+            tulosteElem.innerHTML = "miu mau";
+        else
+            tulosteElem.innerHTML = "hmm";
+
+         
+    }
+</script>
+</html>

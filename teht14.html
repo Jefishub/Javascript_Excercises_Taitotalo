@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 14</title>
+</head>
+<body>
+    <form onsubmit="tulosta(event)">
+        <input id="luku1" type="text" placeholder="Anna luku">
+        <input id="luku2" type="text" placeholder="Anna toinen luku">
+        <input type="submit" value="Paina tästä!">
+    </form>
+    <p id="tuloste"></p>
+</body>
+<script>
+    function tulosta(e) {
+        e.preventDefault();    
+        let tulosteElem = document.getElementById('tuloste');
+        let luku1 = document.getElementById("luku1").value;
+        let luku2 = document.getElementById("luku2").value;
+        let summa = parseInt(luku1) + parseInt(luku2);
+        let isThirty = false;
+        if (luku1 == 30 || luku2 == 30 || summa == 30)
+            isThirty = true;
+        
+        tulosteElem.innerHTML = "Luku1, luku2 tai niiden summa on 30: " + isThirty;
+
+         
+    }
+</script>
+</html>

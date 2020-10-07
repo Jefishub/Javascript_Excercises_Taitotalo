@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 23</title>
+</head>
+<body>
+    <form onsubmit="tuloste(event)">
+        <input type="submit" value="Paina tästä!"><br>
+    </form>
+    <p id="tuloste"></p>
+    <script>
+        let tulosteElem = document.getElementById('tuloste');
+        function Car(nimi,paino,vari) {
+            this.nimi = nimi;
+            this.paino = paino;
+            this.vari = vari;
+            this.carInfo = function() {
+                return "Your Car is " + this.nimi + " and it weights " + this.paino + " and it’s color is " + this.vari;
+            }
+        };
+
+        function tuloste(e) {
+            e.preventDefault();
+            auto1 = new Car("Toyota",1000,"red")
+            auto2 = new Car("Audi", 1200, "white")
+            if (auto1.paino > auto2.paino)
+                tulosteElem.innerHTML = auto1.carInfo();
+            else if (auto1.paino < auto2.paino)
+                tulosteElem.innerHTML = auto2.carInfo();
+            else
+                tulosteElem.innerHTML = "Both cars have same weight";
+        }
+    </script>
+</body>
+</html>

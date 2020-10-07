@@ -2,22 +2,20 @@
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
-    <title>Tehtävä 7</title>
+    <title>Tehtävä 9</title>
 </head>
 <body>
-    <form onsubmit="tulostaNumerot(event)">
+    <form onsubmit="tulosta(event)">
         <input type="submit" value="Paina minua!">
     </form>
     <p id="tuloste"></p>
 </body>
 <script>
-    function tulostaNumerot(e) {
+    function tulosta(e) {
         e.preventDefault();    
         let tulosteElem = document.getElementById('tuloste');
-        let teksti = "";
-        for (var i = 1; i<=10; i++) {
-            teksti += '<span style="font-size:' + String(10+i) + 'px">' + String(i) + '</span><br>';
-        }      
+        let kori = ['päärynä', 'omena', 'persikka'];
+        let teksti = "Hedelmiä on korissa " + kori.length + ", joista yksi on " + kori[0];
 
         tulosteElem.innerHTML = teksti;
     }

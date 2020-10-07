@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 22</title>
+</head>
+<body>
+    <form onsubmit="tuloste(event)">
+        <input type="submit" value="Paina tästä!"><br>
+    </form>
+    <p id="tuloste"></p>
+    <script>
+        let tulosteElem = document.getElementById('tuloste');
+        var car = {
+            nimi : "Toyota",
+            paino : "1000kg",
+            vari : "red",
+            get CarInfo() {
+                return "Your Car is " + this.nimi + " and it weights " + this.paino + " and it’s color is " + this.vari;
+            }
+        };
+        function tuloste(e) {
+            e.preventDefault();
+            tulosteElem.innerHTML = car.CarInfo;
+        }
+    </script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
-    <title>Tehtävä 8</title>
+    <title>Tehtävä 10</title>
 </head>
 <body>
     <form onsubmit="tulosta(event)">
@@ -14,13 +14,17 @@
     function tulosta(e) {
         e.preventDefault();    
         let tulosteElem = document.getElementById('tuloste');
-        let teksti = "";
-        for (var i = 1; i<=100; i++) {
-            if (i%2 == 1)
-                teksti += String(i) + ", ";
-        }      
+        let numerot = [1,2,3,5,6,7,9,6,5,4,3];
+        let summa = 0;
 
-        tulosteElem.innerHTML = teksti;
+        //numerot.forEach(element => summa += element);
+        
+        numerot.forEach(myFunction);
+        function myFunction(item) {
+            summa += item;
+        }
+
+        tulosteElem.innerHTML = "Taulukon [" + numerot + "] lukujen summa on: " + summa;
     }
 </script>
 </html>

@@ -2,10 +2,11 @@
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
-    <title>Tehtävä 8</title>
+    <title>Tehtävä 19</title>
 </head>
 <body>
     <form onsubmit="tulosta(event)">
+        <input id="numero" type="text" placeholder="Anna numero">
         <input type="submit" value="Paina minua!">
     </form>
     <p id="tuloste"></p>
@@ -14,13 +15,14 @@
     function tulosta(e) {
         e.preventDefault();    
         let tulosteElem = document.getElementById('tuloste');
-        let teksti = "";
-        for (var i = 1; i<=100; i++) {
-            if (i%2 == 1)
-                teksti += String(i) + ", ";
-        }      
+        let numero = document.getElementById("numero").value;
+        let isInRef = false;
+        if (numero < 100 && numero.includes(5))
+            isInRef = true;
 
-        tulosteElem.innerHTML = teksti;
+        tulosteElem.innerHTML = isInRef;
+
+         
     }
 </script>
 </html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 16</title>
+</head>
+<body>
+    <form onsubmit="tuloste(event)">
+        <label for="luku1">Luku</label>
+        <input id="luku1" type="number" placeholder="Luku">
+        <label for="luku2">Luku</label>
+        <input id="luku2" type="number" placeholder="Luku">
+        <label for="luku3">Luku</label>
+        <input id="luku3" type="number" placeholder="Luku">
+        <br>
+        <input type="submit" value="Laske">
+    </form>
+    <p id="numero"></p>
+    <script>
+        let luku1Elem = document.getElementById('luku1');
+        let luku2Elem = document.getElementById('luku2');
+        let luku3Elem = document.getElementById('luku3');
+        let numeroElem = document.getElementById('numero');
+        function tuloste(e) {
+            e.preventDefault();            
+            let luku1 = luku1Elem.value;
+            let luku2 = luku2Elem.value;
+            let luku3 = luku3Elem.value;
+            let tulos;
+            // Kirjoita tähän oma koodisi            
+            
+            tulos = Math.max(luku1,luku2,luku3);
+            numeroElem.style.border = "2px solid red";
+            numeroElem.innerHTML = tulos;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 24</title>
+</head>
+<body>
+    <form onsubmit="tuloste(event)">
+        <input id="nimi" type="text" placeholder="Anna nimi">
+        <input id="paino" type="number" placeholder="Anna paino">
+        <input id="vari" type="text" placeholder="Anna väri">
+        <input type="submit" value="Paina tästä!"><br>
+    </form>
+    <p id="tuloste"></p>
+    <script>
+        let tulosteElem = document.getElementById('tuloste');
+        let nimiElem = document.getElementById('nimi');
+        let painoElem = document.getElementById('paino');
+        let variElem = document.getElementById('vari');
+        function Car(nimi,paino,vari) {
+            this.nimi = nimi;
+            this.paino = paino;
+            this.vari = vari;
+            this.carInfo = function() {
+                return "Your Car is " + this.nimi + " and it weights " + this.paino + " and it’s color is " + this.vari;
+            }
+        }
+
+        function tuloste(e) {
+            e.preventDefault();
+            let nimi = nimiElem.value;
+            let paino = Number(painoElem.value);
+            let vari = variElem.value;
+            let auto = new Car(nimi,paino,vari);
+            tulosteElem.innerHTML = auto.carInfo();
+
+        }
+    </script>
+</body>
+</html>

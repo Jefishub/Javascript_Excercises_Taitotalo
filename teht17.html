@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 17</title>
+</head>
+<body>
+    <form onsubmit="tulosta(event)">
+        <input id="luku1" type="text" placeholder="Anna luku">
+        <input id="luku2" type="text" placeholder="Anna toinen luku">
+        <input type="submit" value="Paina tästä!">
+    </form>
+    <p id="tuloste"></p>
+</body>
+<script>
+    function tulosta(e) {
+        e.preventDefault();    
+        let tulosteElem = document.getElementById('tuloste');
+        let luku1 = document.getElementById("luku1").value;
+        let luku2 = document.getElementById("luku2").value;
+        let erotus1 = Math.abs(luku1-1000);
+        let erotus2 = Math.abs(luku2-1000);
+        let result = luku1;
+        if (erotus1 < erotus2)
+            result = luku2;
+        else if (erotus1 > erotus2)
+            result = luku1;
+        else
+            result = "Luku1 ja Luku2 ovat yhtä kaukana 1000:sta";
+
+        
+        tulosteElem.innerHTML = "Luvuista 1 ja 2 kauempana 1000:sta on: " + result;
+
+         
+    }
+</script>
+</html>

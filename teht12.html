@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 12</title>
+</head>
+<body>
+    <form onsubmit="tulosta(event)">
+        <input id="luku1" type="text" placeholder="Anna luku">
+        <input id="luku2" type="text" placeholder="Anna toinen luku">
+        <input type="submit" value="Laske tulo">
+    </form>
+    <p id="tuloste"></p>
+</body>
+<script>
+    function tulosta(e) {
+        e.preventDefault();    
+        let tulosteElem = document.getElementById('tuloste');
+        let luku1 = document.getElementById("luku1").value;
+        let luku2 = document.getElementById("luku2").value;
+        let tulo = luku1 * luku2;
+        let isOver = false;
+        if (tulo > 87)
+            isOver = true;
+        
+        tulosteElem.innerHTML = "Tulo on suurempi kuin 87: " + isOver;
+
+         
+    }
+</script>
+</html>

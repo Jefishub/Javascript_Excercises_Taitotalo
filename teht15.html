@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 15</title>
+</head>
+<body>
+    <form onsubmit="tuloste(event)">
+        <label for="teksti">Anna teksti: </label>
+        <input type="text" id="teksti"><br>
+        <input type="submit" value="Muotoile teksti"><br>
+    </form>
+    <p id="tuloste"></p>
+    <p id="tuloste2"></p>
+    <script>
+        let tulosteElem = document.getElementById('tuloste');
+        let tuloste2Elem = document.getElementById('tuloste2');
+        let tekstiElem = document.getElementById('teksti');
+        function tuloste(e) {
+            e.preventDefault();
+            let teksti = tekstiElem.value;
+            let tulos = '';
+            // Kirjoita tähän oma koodisi
+            tulos = teksti[0].toUpperCase() + teksti.slice(1,teksti.length-1);
+
+            tulosteElem.innerHTML = tulos;
+            tuloste2Elem.innerHTML = tulos.toUpperCase();
+        }
+    </script>
+</body>
+</html>

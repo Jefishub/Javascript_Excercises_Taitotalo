@@ -2,10 +2,11 @@
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
-    <title>Tehtävä 8</title>
+    <title>Tehtävä 13</title>
 </head>
 <body>
     <form onsubmit="tulosta(event)">
+        <input id="ika" type="text" placeholder="Anna numero">
         <input type="submit" value="Paina minua!">
     </form>
     <p id="tuloste"></p>
@@ -14,13 +15,18 @@
     function tulosta(e) {
         e.preventDefault();    
         let tulosteElem = document.getElementById('tuloste');
+        let ika = document.getElementById("ika").value;
         let teksti = "";
-        for (var i = 1; i<=100; i++) {
-            if (i%2 == 1)
-                teksti += String(i) + ", ";
-        }      
+        if (ika == "")
+            teksti = "Anna Numero! Et antanut yhtään merkkiä";
+        else if (isNaN(ika))
+            teksti = "Anna Numero!";
+        else
+            teksti = "Sinun ikäsi on " + ika;
 
         tulosteElem.innerHTML = teksti;
+
+         
     }
 </script>
 </html>

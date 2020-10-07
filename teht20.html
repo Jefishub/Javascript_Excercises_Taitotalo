@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 20</title>
+</head>
+<body>
+    <form onsubmit="tuloste(event)">
+        <label for="teksti">Anna teksti: </label>
+        <input type="text" id="teksti"><br>
+        <input type="submit" value="Muotoile teksti"><br>
+    </form>
+    <p id="tuloste"></p>
+    <script>
+        let tulosteElem = document.getElementById('tuloste');
+        let tekstiElem = document.getElementById('teksti');
+        function tuloste(e) {
+            e.preventDefault();
+            let teksti = tekstiElem.value;
+            tulosteElem.innerHTML = teksti.slice(0,10);
+        }
+    </script>
+</body>
+</html>
