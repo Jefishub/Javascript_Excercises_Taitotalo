@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 2</title>
+</head>
+<body>
+    <!-- HTML lomake jota ei lähetetä palvelimelle, 
+        vaan kutsutaan Javascript funktiota  -->
+    <form onsubmit="tervehdys(event)">
+        <input id="name" type="text" placeholder="Kirjoita nimesi">
+        <input type="submit">
+    </form>
+    <!-- HTML p elementti johon kirjoitetaan -->
+    <p id="tervehdys"></p>
+    <script>
+        // lomakkeen tekstikenttä (name) objekti ja elementti p (tervehdys) 
+        // luetaan muuttujiin dokumentti objektin metodilla 
+        let nimiElem = document.getElementById('name');
+        let tervehdysElem = document.getElementById('tervehdys');
+        function tervehdys(e) {
+            // funktiolle lähetetään event objekti jonka preventDefault() funktiolla 
+            // estetään normaali lomakkeen lähetys
+            e.preventDefault();
+            // elementin arvo poimitaan muuttujaan
+            let nimi = nimiElem.value;
+            // muuttujan nimi arvo lisätään osaksi merkkijonoa,
+            // joka asetetaan p-elementin tekstiksi
+            tervehdysElem.innerHTML = `Hei, sinun nimesi on: ${nimi}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 4</title>
+</head>
+<body>
+    <form onsubmit="tuloste(event)">
+        <label for="luku">Luku</label>
+        <input id="luku" type="number" placeholder="Luku">
+        <br>
+        <input type="submit" value="Laske">
+    </form>
+    <h2 id="numero"></h2>
+    <script>
+        let numeroElem = document.getElementById('numero');
+        let lukuElem = document.getElementById('luku');
+        function tuloste(e) {
+            e.preventDefault();
+            let luku = Number(lukuElem.value);
+            // Kirjoita tähän oma koodisi
+            if (luku >= 25 && luku <= 100) {
+                numeroElem.innerHTML = "ok";
+                numeroElem.style.color = "green";
+            }
+            else if (luku < 25) {
+                numeroElem.innerHTML = "liian pieni";
+                numeroElem.style.color = "red";
+            }
+            else {
+                numeroElem.innerHTML = "liian suuri ja lisää tekstiä";
+                numeroElem.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

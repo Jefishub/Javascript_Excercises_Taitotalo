@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 3</title>
+</head>
+<body>
+    <form onsubmit="summa(event)">
+        <label for="luku1">Luku 1</label>
+        <input id="luku1" type="number" placeholder="Luku 1">
+        <br>
+        <label for="luku2">Luku 2</label>
+        <input id="luku2" type="number" placeholder="Luku 2">
+        <br>
+        <input type="submit" value="Laske">
+    </form>
+    <p id="summa"></p>
+    <script>
+        let luku1Elem = document.getElementById('luku1');
+        let luku2Elem = document.getElementById('luku2');
+        let summaElem = document.getElementById('summa');
+        function summa(e) {
+            e.preventDefault();
+            // Kirjoita tähän Javascript koodisi
+            let luku1 = Number(luku1Elem.value);
+            let luku2 = Number(luku2Elem.value);
+            let number = 0;
+            if (luku1 == luku2) {
+                number = luku1 * luku2;
+            }
+            else {
+                number = luku1 / luku2;
+            }
+            summaElem.style.color = "red";
+            summaElem.style.fontSize = "14px";
+            summaElem.style.fontFamily = "Verdana";
+
+            summaElem.innerHTML = number;
+            
+        }
+    </script>
+</body>
+</html>

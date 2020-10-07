@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 4</title>
+</head>
+<body>
+    <form onsubmit="tuloste(event)">
+        <label for="luku">Luku</label>
+        <input id="luku" type="number" placeholder="Luku">
+        <br>
+        <input type="submit" value="Laske">
+    </form>
+    <h2 id="numero"></h2>
+    <script>
+        let numeroElem = document.getElementById('numero');
+        let lukuElem = document.getElementById('luku');
+        function tuloste(e) {
+            e.preventDefault();
+            let luku = Number(lukuElem.value);
+            let teksti = "";
+            // Kirjoita tähän oma koodisi
+            for (var i = 0; i <= 10; i++) {
+                teksti += String(luku) + " * = " + String(luku * i) + "<br>";
+            }
+            numeroElem.innerHTML = teksti;
+        }
+    </script>
+</body>
+</html>
